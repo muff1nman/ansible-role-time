@@ -1,0 +1,8 @@
+---
+- name: Install chrony
+  package:
+    name: chrony
+- name: Set the timezone
+  timezone:
+    name: "{{ timezone }}"
+- service: name={{ chrony_service_name }} state=started enabled=yes
